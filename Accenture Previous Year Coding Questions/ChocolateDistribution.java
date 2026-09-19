@@ -32,7 +32,7 @@ public class ChocolateDistribution {
 
         Arrays.sort(arr);
 
-        if(m > arr.length-1){
+        if(m > arr.length){
             return -1;
         }
 
