@@ -78,3 +78,44 @@ int main()
 	return 0;
 }
 
+
+
+
+// agar string me number diya ho toh 
+class Solution {
+    public int getCarries(String s1, String s2) {
+
+        int carry = 0;
+        int count = 0;
+
+        int i = s1.length() - 1;
+        int j = s2.length() - 1;
+
+        while (i >= 0 || j >= 0) {
+
+            int val1 = 0;
+            int val2 = 0;
+
+            if (i >= 0) {
+                val1 = s1.charAt(i) - '0';
+                i--;
+            }
+
+            if (j >= 0) {
+                val2 = s2.charAt(j) - '0';
+                j--;
+            }
+
+            int sum = carry + val1 + val2;
+
+            if (sum > 9) {
+                carry = 1;
+                count++;
+            } else {
+                carry = 0;
+            }
+        }
+
+        return count;
+    }
+}
